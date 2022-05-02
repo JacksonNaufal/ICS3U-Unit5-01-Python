@@ -2,32 +2,28 @@
 
 # Created by: Jackson Naufal
 # Created on: March 2022
-# This is a guess the random number program
+# This is fahrenheit to celsius converter
+
+
+def temperature_function():
+
+    temperature_string = input("Enter Your Temperature In °C: ")
+
+    try:
+        temperature = int(temperature_string)
+        fahrenheit_conversion = round((temperature * 9 / 5) + 32, 2)
+
+        # output
+        print("{0}°C is equal to {1}°F".format(temperature, fahrenheit_conversion))
+    except Exception:
+        print("\nThat was not an integer")
 
 
 def main():
-    # This is a random number guesser, with try and catch
-    integer = 0
-    total = 0
 
-    # input
-    user_number = input("Enter Your Number: ")
-
-    # process & output
-    try:
-        user_input = int(user_number)
-        if user_input < 0:
-            print("Invalid Input")
-        else:
-            for integer in range(user_input):
-                user_number = input("Enter another number!: ")
-                user_input = int(user_number)
-                if user_input < 0:
-                    continue
-                total = total + user_input
-                print("The sum is {0}.".format(total))
-    except Exception:
-        print("\nThat was not an integer")
+    # call function
+    temperature_function()
+    print("\nDone.")
 
 
 if __name__ == "__main__":
